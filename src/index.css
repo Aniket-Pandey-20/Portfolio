@@ -133,6 +133,24 @@
   }
 }
 
+@keyframes letter-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px transparent;
+  }
+  50% {
+    text-shadow: 0 0 10px hsl(var(--primary));
+  }
+}
+
+@keyframes progress-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px transparent;
+  }
+  50% {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.3);
+  }
+}
+
 @layer utilities {
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
@@ -144,6 +162,14 @@
   
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
+  }
+  
+  .animate-letter-glow {
+    animation: letter-glow 3s ease-in-out infinite;
+  }
+  
+  .animate-progress-pulse {
+    animation: progress-pulse 2s ease-in-out infinite;
   }
   
   .delay-1000 {

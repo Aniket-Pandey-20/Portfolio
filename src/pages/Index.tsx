@@ -9,9 +9,11 @@ import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
+import IntroScreen from "../components/IntroScreen";
 
 const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     if (darkMode) {
@@ -24,6 +26,15 @@ const Index = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  const handleIntroComplete = () => {
+    setShowIntro(false);
+  };
+
+  // Show intro screen first
+  if (showIntro) {
+    return <IntroScreen onComplete={handleIntroComplete} />;
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
