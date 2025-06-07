@@ -33,7 +33,7 @@ const Skills = () => {
           <div className="w-16 h-0.5 bg-primary mx-auto"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div key={category.title} className="text-center">
               <h3 className="text-lg font-semibold text-foreground mb-4">
