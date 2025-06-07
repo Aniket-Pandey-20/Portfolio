@@ -80,20 +80,14 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
+        {/* Simplified Scroll Indicator */}
         <div className="animate-fade-in delay-2000">
           <button
             onClick={() => scrollToSection('about')}
-            className="group text-muted-foreground hover:text-foreground transition-all duration-300 flex flex-col items-center gap-2"
+            className="text-muted-foreground hover:text-primary transition-colors duration-300"
             aria-label="Scroll to about section"
           >
-            <span className="text-sm font-medium group-hover:text-primary transition-colors duration-300">
-              Discover More
-            </span>
-            <div className="relative">
-              <ArrowDown className="h-6 w-6 animate-bounce group-hover:text-primary transition-colors duration-300" />
-              <div className="absolute inset-0 rounded-full bg-primary/20 scale-0 group-hover:scale-150 transition-transform duration-300"></div>
-            </div>
+            <ArrowDown className="h-6 w-6 animate-bounce mx-auto" />
           </button>
         </div>
       </div>
