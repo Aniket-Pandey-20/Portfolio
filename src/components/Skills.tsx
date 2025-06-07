@@ -2,10 +2,27 @@
 import { Badge } from "@/components/ui/badge";
 
 const Skills = () => {
-  const skills = [
-    "C/C++", "Python", "JavaScript", "C#", "React", "ASP.NET", 
-    "Node.js", "Express.js", "SQL", "MongoDB", "AWS", "Git", 
-    "REST API", "gRPC"
+  const skillCategories = [
+    {
+      title: "Languages",
+      skills: ["C/C++", "Python", "JavaScript", "C#"]
+    },
+    {
+      title: "Frontend",
+      skills: ["React", "JavaScript"]
+    },
+    {
+      title: "Backend",
+      skills: ["ASP.NET", "Node.js", "Express.js"]
+    },
+    {
+      title: "Database",
+      skills: ["SQL", "MongoDB"]
+    },
+    {
+      title: "Cloud & Tools",
+      skills: ["AWS", "Git", "REST API", "gRPC"]
+    }
   ];
 
   return (
@@ -16,16 +33,25 @@ const Skills = () => {
           <div className="w-16 h-0.5 bg-primary mx-auto"></div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-          {skills.map((skill, index) => (
-            <Badge 
-              key={skill}
-              variant="outline"
-              className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 cursor-default animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {skill}
-            </Badge>
+        <div className="space-y-8">
+          {skillCategories.map((category, categoryIndex) => (
+            <div key={category.title} className="text-center">
+              <h3 className="text-lg font-semibold text-foreground mb-4">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {category.skills.map((skill, skillIndex) => (
+                  <Badge 
+                    key={skill}
+                    variant="outline"
+                    className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 cursor-default animate-fade-in"
+                    style={{ animationDelay: `${(categoryIndex * category.skills.length + skillIndex) * 0.1}s` }}
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
