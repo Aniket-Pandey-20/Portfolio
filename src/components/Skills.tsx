@@ -8,16 +8,16 @@ const Skills = () => {
       skills: ["C/C++", "Python", "JavaScript", "C#"]
     },
     {
-      title: "Frontend",
-      skills: ["React", "JavaScript"]
+      title: "Database",
+      skills: ["SQL", "MongoDB"]
     },
     {
       title: "Backend",
       skills: ["ASP.NET", "Node.js", "Express.js"]
     },
     {
-      title: "Database",
-      skills: ["SQL", "MongoDB"]
+      title: "Frontend",
+      skills: ["React", "JavaScript"]
     },
     {
       title: "Cloud & Tools",
@@ -33,26 +33,73 @@ const Skills = () => {
           <div className="w-16 h-0.5 bg-primary mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={category.title} className="text-center">
+        <div className="space-y-8">
+          {/* First row: Languages and Database */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skillCategories.slice(0, 2).map((category, categoryIndex) => (
+              <div key={category.title} className="text-center">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill}
+                      variant="outline"
+                      className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 cursor-default animate-fade-in"
+                      style={{ animationDelay: `${(categoryIndex * category.skills.length + skillIndex) * 0.1}s` }}
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Second row: Backend and Frontend */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skillCategories.slice(2, 4).map((category, categoryIndex) => (
+              <div key={category.title} className="text-center">
+                <h3 className="text-lg font-semibold text-foreground mb-4">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill}
+                      variant="outline"
+                      className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 cursor-default animate-fade-in"
+                      style={{ animationDelay: `${((categoryIndex + 2) * category.skills.length + skillIndex) * 0.1}s` }}
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Third row: Cloud & Tools (centered) */}
+          <div className="flex justify-center">
+            <div className="text-center max-w-md">
               <h3 className="text-lg font-semibold text-foreground mb-4">
-                {category.title}
+                {skillCategories[4].title}
               </h3>
               <div className="flex flex-wrap justify-center gap-3">
-                {category.skills.map((skill, skillIndex) => (
+                {skillCategories[4].skills.map((skill, skillIndex) => (
                   <Badge 
                     key={skill}
                     variant="outline"
                     className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 cursor-default animate-fade-in"
-                    style={{ animationDelay: `${(categoryIndex * category.skills.length + skillIndex) * 0.1}s` }}
+                    style={{ animationDelay: `${(4 * skillCategories[4].skills.length + skillIndex) * 0.1}s` }}
                   >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
