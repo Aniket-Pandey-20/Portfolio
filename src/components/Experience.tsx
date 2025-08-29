@@ -2,41 +2,35 @@
 const Experience = () => {
   const experiences = [
     {
-      role: "Software Engineer",
-      company: "TechCorp Solutions",
-      duration: "2023 - Present",
-      location: "San Francisco, CA",
+      role: "Programmer Analyst",
+      company: "Cognizant",
+      duration: "June 2024 - Present",
+      location: "Pune",
       achievements: [
-        "Developed and maintained 5+ web applications using React and Node.js",
-        "Improved application performance by 40% through code optimization",
-        "Collaborated with cross-functional teams to deliver features on time",
-        "Mentored junior developers and conducted code reviews"
+        "Managed and maintained a microservices-based CRM and workflow system built on the .NET Framework",
+        "Additionally, contributed to restructuring the backend architecture from REST API to gRPC, significantly reducing latency and deliver high-impact backend solutions",
+        "Executed end-to-end testing of Domestic Sales processes within the Order-to-Cash (O2C) cycle along with IDoc re-triggers for SAP SD implementation as well as middle-ware upgrade projects"
       ],
       type: "Full-time"
     },
     {
-      role: "Junior Software Developer",
-      company: "StartupXYZ",
-      duration: "2022 - 2023",
-      location: "Remote",
+      role: "Software Developer",
+      company: "IdeoActiv Software Pvt Ltd",
+      duration: "Aug 2023 - May 2024",
+      location: "Bangalore",
       achievements: [
-        "Built responsive web interfaces using React and TypeScript",
-        "Implemented RESTful APIs with Express.js and PostgreSQL",
-        "Reduced bug reports by 30% through comprehensive testing",
-        "Participated in agile development processes and daily standups"
+        "Developed a full-stack Node.js integrating the OpenAI API using React and TypeScript, implementing API calls, filter-based outputs, and advanced AI chaining for dynamic data handling",
+        "Led frontend development using React within Gatsby for a website-building platform"
       ],
       type: "Full-time"
     },
     {
-      role: "Software Development Intern",
-      company: "Innovation Labs",
-      duration: "2022 (3 months)",
-      location: "New York, NY",
+      role: "Software Developer Intern",
+      company: "Centre for Development of Advanced Computing - C-DAC",
+      duration: "Feb 2023 - April 2023",
+      location: "Pune",
       achievements: [
-        "Contributed to open-source projects and internal tools",
-        "Learned modern development practices and git workflows",
-        "Assisted in debugging and fixing critical production issues",
-        "Gained experience with cloud platforms and deployment"
+        "Improved operational efficiency by optimizing the center registration process using PERN stack, integrated a dashboard with 5+ graphs using Chart.js, resulting in a 50% reduction in administrative overhead"
       ],
       type: "Internship"
     }

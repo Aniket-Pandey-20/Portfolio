@@ -5,32 +5,32 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com/example"
+      title: "CRM Integration and Workflow Automation Platform",
+      description: "An Enterprise Integration and Experience Optimization Platform with microservices-based CRM and workflow system built on .NET Framework.",
+      techStack: ["ASP.NET", "MVC", "Web APIs", "RestAPIs", "gRPC"],
+      liveLink: "#",
+      githubLink: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative project management tool with real-time updates and team features.",
-      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com/example"
+      title: "Exam Centre Management System",
+      description: "Responsive team exam registration and management website built using React.js, Express.js and PostgreSQL with JWT token-based authorization and Chart.js dashboard.",
+      techStack: ["React.js", "Express.js", "PostgreSQL", "JWT", "Chart.js"],
+      liveLink: "#",
+      githubLink: "#"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application with location-based forecasts and data visualizations.",
-      techStack: ["Vue.js", "Python", "FastAPI", "Chart.js"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com/example"
+      title: "AI-Powered Data Processing Platform",
+      description: "Full-stack Node.js application integrating OpenAI API using React and TypeScript, implementing API calls, filter-based outputs, and advanced AI chaining for dynamic data handling.",
+      techStack: ["Node.js", "React", "TypeScript", "OpenAI API"],
+      liveLink: "#",
+      githubLink: "#"
     },
     {
-      title: "Social Media Analytics",
-      description: "A comprehensive analytics dashboard for social media performance tracking.",
-      techStack: ["React", "D3.js", "Node.js", "Redis"],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com/example"
+      title: "Life Science Project (SAP)",
+      description: "Tested the complete Order-to-Cash (O2C) cycle in SAP SD, validating business flows including sales orders, deliveries, bills, and payments. Performed IDoc testing during middleware upgrade.",
+      techStack: ["SAP SD", "IDoc", "Order-to-Cash", "Testing"],
+      liveLink: "#",
+      githubLink: "#"
     }
   ];
 

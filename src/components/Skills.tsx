@@ -5,23 +5,23 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Languages",
-      skills: ["C/C++", "Python", "JavaScript", "C#"]
+      skills: ["C/C++", "C#", "JavaScript", "Python", "SQL"]
     },
     {
       title: "Database",
-      skills: ["SQL", "MongoDB"]
+      skills: ["MySQL", "MongoDB"]
     },
     {
       title: "Backend",
-      skills: ["ASP.NET", "Node.js", "Express.js"]
+      skills: ["ASP.NET (MVC & Web API)", "Node.js", "RESTful APIs", "gRPC"]
     },
     {
       title: "Frontend",
-      skills: ["React", "JavaScript"]
+      skills: ["React", "TypeScript", "HTML5", "CSS3", "JavaScript"]
     },
     {
       title: "Cloud & Tools",
-      skills: ["AWS", "Git", "REST API", "gRPC"]
+      skills: ["AWS", "Git", "GitHub", "SAP SD"]
     }
   ];
 

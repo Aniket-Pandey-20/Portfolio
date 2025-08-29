@@ -11,34 +11,34 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a dedicated Software Engineer with <strong>2 years of experience</strong> in 
-              developing robust, scalable applications. My journey in tech has been driven by 
-              curiosity and a passion for solving complex problems through elegant code.
+              I'm a dedicated Programmer Analyst with <strong>1.5+ years of experience</strong> in 
+              developing robust, scalable applications using .NET Framework, React, and modern web technologies. 
+              Currently working at Cognizant, I specialize in microservices architecture and backend optimization.
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I specialize in full-stack development, with expertise in modern frameworks 
-              and technologies. I believe in writing clean, maintainable code and creating 
-              user experiences that truly matter.
+              My expertise spans full-stack development with strong focus on backend systems, 
+              API development (REST & gRPC), and database management. I have hands-on experience 
+              with cloud technologies, particularly AWS, and SAP SD implementation.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, contributing 
-              to open-source projects, or sharing knowledge with the developer community.
+              I hold a BTech in Computer Science (GPA: 8.41/10) and am AWS Cloud Practitioner certified. 
+              I'm passionate about optimizing system performance and delivering high-impact solutions.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="bg-card border border-border rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-primary">2+</div>
+                <div className="text-2xl font-bold text-primary">1.5+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="bg-card border border-border rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-primary">20+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
+                <div className="text-2xl font-bold text-primary">5+</div>
+                <div className="text-sm text-muted-foreground">Major Projects</div>
               </div>
               <div className="bg-card border border-border rounded-lg p-4 text-center">
-                <div className="text-2xl font-bold text-primary">5+</div>
-                <div className="text-sm text-muted-foreground">Technologies</div>
+                <div className="text-2xl font-bold text-primary">8.41</div>
+                <div className="text-sm text-muted-foreground">GPA/10</div>
               </div>
             </div>
           </div>
