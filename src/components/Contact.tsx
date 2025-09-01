@@ -44,20 +44,20 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:aniket.pandey@example.com",
-      label: "aniket.pandey@example.com"
+      href: "mailto:aniketpandey658@gmail.com",
+      label: "aniketpandey658@gmail.com"
     },
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/aniketpandey",
-      label: "github.com/aniketpandey"
+      href: "https://github.com/Aniket-Pandey-20",
+      label: "github.com/Aniket-Pandey-20"
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/aniketpandey",
-      label: "linkedin.com/in/aniketpandey"
+      href: "https://www.linkedin.com/in/AniketPandey0",
+      label: "linkedin.com/in/AniketPandey0"
     }
   ];
 
@@ -77,75 +77,71 @@ const Contact = () => {
           <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300">
             <h3 className="text-2xl font-semibold text-foreground mb-6">Send me a message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Name
                   </label>
                   <Input
                     type="text"
-                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
                     className="w-full"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Email
                   </label>
                   <Input
                     type="email"
-                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
                     className="w-full"
                     placeholder="your.email@example.com"
+                    required
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Subject
                 </label>
                 <Input
                   type="text"
-                  id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  required
                   className="w-full"
                   placeholder="What's this about?"
+                  required
                 />
               </div>
               
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+              <div className="flex-1 flex flex-col">
+                <label className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
                 <Textarea
-                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  rows={6}
+                  className="w-full flex-1 resize-none"
+                  placeholder="Tell me about your project or just say hello..."
                   required
-                  rows={5}
-                  className="w-full"
-                  placeholder="Tell me about your project or just say hello!"
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 font-medium transition-all duration-300 hover:scale-105"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 rounded-lg transition-all duration-300 hover:shadow-lg mt-auto"
               >
                 <Send className="h-4 w-4 mr-2" />
                 Send Message
