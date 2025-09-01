@@ -23,9 +23,18 @@ const About = () => {
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I hold a BTech in Computer Science (GPA: 8.41/10) and am AWS Cloud Practitioner certified. 
-              I'm passionate about optimizing system performance and delivering high-impact solutions.
+              I hold a BTech in Computer Science from Shri Shankaracharya Technical Campus, Bhilai (GPA: 8.41/10) 
+              and am AWS Cloud Practitioner certified. I also have Problem Solving (Intermediate) certification from HackerRank.
             </p>
+            
+            <div className="bg-card border border-border rounded-lg p-4 mt-4">
+              <h4 className="font-semibold text-foreground mb-2">Education & Certifications</h4>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div>• B.Tech in Computer Science (Aug 2019 – June 2023)</div>
+                <div>• AWS Cloud Practitioner</div>
+                <div>• Problem Solving (Intermediate) – HackerRank</div>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <div className="bg-card border border-border rounded-lg p-4 text-center">

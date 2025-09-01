@@ -4,33 +4,34 @@ const Experience = () => {
     {
       role: "Programmer Analyst",
       company: "Cognizant",
-      duration: "June 2024 - Present",
+      duration: "June 2024 – Present",
       location: "Pune",
       achievements: [
         "Managed and maintained a microservices-based CRM and workflow system built on the .NET Framework",
-        "Additionally, contributed to restructuring the backend architecture from REST API to gRPC, significantly reducing latency and deliver high-impact backend solutions",
-        "Executed end-to-end testing of Domestic Sales processes within the Order-to-Cash (O2C) cycle along with IDoc re-triggers for SAP SD implementation as well as middle-ware upgrade projects"
+        "Contributed to restructuring the backend architecture from REST API to gRPC, significantly reducing latency and delivering high-impact backend solutions",
+        "Executed end-to-end testing of Domestic Sales processes within the Order-to-Cash (O2C) cycle along with IDoc re-triggers for SAP SD implementation as well as middleware upgrade projects"
       ],
       type: "Full-time"
     },
     {
       role: "Software Developer",
       company: "IdeoActiv Software Pvt Ltd",
-      duration: "Aug 2023 - May 2024",
+      duration: "Aug 2023 – May 2024",
       location: "Bangalore",
       achievements: [
-        "Developed a full-stack Node.js integrating the OpenAI API using React and TypeScript, implementing API calls, filter-based outputs, and advanced AI chaining for dynamic data handling",
+        "Developed a full-stack feature integrating the OpenAI API using React and TypeScript, implementing API calls, filter-based outputs, and advanced API chaining for dynamic data handling",
         "Led frontend development using React within Gatsby for a website-building platform"
       ],
       type: "Full-time"
     },
     {
       role: "Software Developer Intern",
-      company: "Centre for Development of Advanced Computing - C-DAC",
-      duration: "Feb 2023 - April 2023",
+      company: "C-DAC",
+      duration: "Feb 2023 – Apr 2023",
       location: "Pune",
       achievements: [
-        "Improved operational efficiency by optimizing the center registration process using PERN stack, integrated a dashboard with 5+ graphs using Chart.js, resulting in a 50% reduction in administrative overhead"
+        "Improved operational efficiency by optimizing the center registration process using PERN stack",
+        "Integrated a dashboard with 5+ graphs using Chart.js, resulting in a 50% reduction in administrative overhead"
       ],
       type: "Internship"
     }
