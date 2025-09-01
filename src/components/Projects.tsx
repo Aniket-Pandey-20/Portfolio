@@ -45,30 +45,48 @@ const Projects = () => {
           {projects.map((project) => (
             <div 
               key={project.title}
-              className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group"
+              className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-3 leading-tight">
-                {project.title}
-              </h3>
+              {/* Part 1: Heading */}
+              <div className="p-4 border-b border-border">
+                <h3 className="text-lg font-semibold text-foreground leading-tight">
+                  {project.title}
+                </h3>
+              </div>
               
-              <p className="text-muted-foreground mb-6 leading-relaxed text-sm flex-1">
-                {project.shortDescription}
-              </p>
+              {/* Part 2: Description */}
+              <div className="p-4 flex-1">
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {project.shortDescription}
+                </p>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <span 
-                      key={tech}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md font-medium">
-                      +{project.technologies.length - 3} more
-                    </span>
+              {/* Part 3: Tech Stack */}
+              <div className="p-4 border-t border-border space-y-3">
+                <div className="grid grid-cols-2 gap-2">
+                  {project.technologies.length <= 4 ? (
+                    project.technologies.map((tech) => (
+                      <span 
+                        key={tech}
+                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium text-center"
+                      >
+                        {tech}
+                      </span>
+                    ))
+                  ) : (
+                    <>
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span 
+                          key={tech}
+                          className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium text-center"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md font-medium text-center">
+                        +{project.technologies.length - 3} more
+                      </span>
+                    </>
                   )}
                 </div>
                 
@@ -76,7 +94,7 @@ const Projects = () => {
                   onClick={() => setSelectedProject(project)}
                   variant="outline"
                   size="sm"
-                  className="w-full mt-auto group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
                 >
                   View Details
                 </Button>
