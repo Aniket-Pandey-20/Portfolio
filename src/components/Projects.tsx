@@ -45,24 +45,24 @@ const Projects = () => {
           {projects.map((project) => (
             <div 
               key={project.title}
-              className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group"
+              className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group space-y-4"
             >
               {/* Part 1: Heading */}
-              <div className="p-4 border-b border-border">
+              <div>
                 <h3 className="text-lg font-semibold text-foreground leading-tight">
                   {project.title}
                 </h3>
               </div>
               
               {/* Part 2: Description */}
-              <div className="p-4 flex-1">
+              <div className="flex-1">
                 <p className="text-muted-foreground leading-relaxed text-sm">
                   {project.shortDescription}
                 </p>
               </div>
               
               {/* Part 3: Tech Stack */}
-              <div className="p-4 border-t border-border space-y-3">
+              <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-2">
                   {project.technologies.length <= 4 ? (
                     project.technologies.map((tech) => (
