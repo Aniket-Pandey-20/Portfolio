@@ -24,10 +24,11 @@ const Navigation = () => {
     { label: 'Home', id: 'hero' },
     { label: 'About', id: 'about' },
     { label: 'Skills', id: 'skills' },
+    { label: 'Experience', id: 'experience' },
     { label: 'Projects', id: 'projects' },
     { label: 'Education', id: 'education' },
     { label: 'Certifications', id: 'certifications' },
-    { label: 'Experience', id: 'experience' },
+   
     { label: 'Contact', id: 'contact' },
   ];
 
