@@ -45,29 +45,29 @@ const Projects = () => {
           {projects.map((project) => (
             <div 
               key={project.title}
-              className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+              className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group"
             >
-              <h3 className="text-lg font-bold text-foreground mb-3">
+              <h3 className="text-lg font-semibold text-foreground mb-3 leading-tight">
                 {project.title}
               </h3>
               
-              <p className="text-muted-foreground mb-4 leading-relaxed text-sm flex-1">
+              <p className="text-muted-foreground mb-6 leading-relaxed text-sm flex-1">
                 {project.shortDescription}
               </p>
               
               <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-2">
-                  {project.technologies.slice(0, 4).map((tech) => (
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.slice(0, 3).map((tech) => (
                     <span 
                       key={tech}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full text-center"
+                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium"
                     >
                       {tech}
                     </span>
                   ))}
-                  {project.technologies.length > 4 && (
-                    <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-full text-center col-span-2">
-                      +{project.technologies.length - 4} more technologies
+                  {project.technologies.length > 3 && (
+                    <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded-md font-medium">
+                      +{project.technologies.length - 3} more
                     </span>
                   )}
                 </div>
@@ -75,7 +75,8 @@ const Projects = () => {
                 <Button 
                   onClick={() => setSelectedProject(project)}
                   variant="outline"
-                  className="w-full mt-auto"
+                  size="sm"
+                  className="w-full mt-auto group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
                 >
                   View Details
                 </Button>

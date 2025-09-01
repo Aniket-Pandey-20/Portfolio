@@ -77,7 +77,7 @@ const Contact = () => {
           <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300">
             <h3 className="text-2xl font-semibold text-foreground mb-6">Send me a message</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-6 flex flex-col h-full">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
@@ -124,7 +124,7 @@ const Contact = () => {
                 />
               </div>
               
-              <div className="flex-1 flex flex-col">
+              <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Message
                 </label>
@@ -133,7 +133,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full flex-1 resize-none"
+                  className="w-full resize-none"
                   placeholder="Tell me about your project or just say hello..."
                   required
                 />
@@ -141,7 +141,7 @@ const Contact = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 rounded-lg transition-all duration-300 hover:shadow-lg mt-auto"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 rounded-lg transition-all duration-300 hover:shadow-lg"
               >
                 <Send className="h-4 w-4 mr-2" />
                 Send Message
