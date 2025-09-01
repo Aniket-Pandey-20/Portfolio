@@ -5,12 +5,12 @@ const Certifications = () => {
     {
       name: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
-      credentialUrl: "https://www.credly.com/badges/your-aws-badge-id"
+      credentialUrl: "https://www.credly.com/badges/d8793a30-d478-4821-837b-21861c2ef8d4"
     },
     {
       name: "Problem Solving (Intermediate)",
       issuer: "HackerRank",
-      credentialUrl: "https://www.hackerrank.com/certificates/your-certificate-id"
+      credentialUrl: "https://www.hackerrank.com/certificates/06c12c2f17bd"
     }
   ];
 

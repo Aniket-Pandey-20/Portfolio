@@ -14,7 +14,6 @@ const Hero = () => {
   const typingTexts = [
     "Aniket Pandey",
     "Software Developer", 
-    "Creative Thinker",
     "Problem Solver",
     "Innovation Driver"
   ];
