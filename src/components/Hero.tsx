@@ -11,6 +11,15 @@ const Hero = () => {
     }
   };
 
+  const handleResumeDownload = () =>{
+    const link = document.createElement("a");
+    link.href = "/Aniket_Pandey_Resume.pdf";
+    link.download = "Aniket_Pandey_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   const typingTexts = [
     "Aniket Pandey",
     "Software Developer", 
@@ -62,6 +71,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="group bg-gradient-to-r from-primary via-primary/90 to-primary/80 hover:from-primary/90 hover:via-primary/80 hover:to-primary/70 text-primary-foreground px-8 py-3 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
+            onClick={handleResumeDownload}
           >
             <span className="mr-2">📄</span>
             Download Resume
