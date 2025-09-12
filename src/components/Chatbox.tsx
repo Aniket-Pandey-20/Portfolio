@@ -13,6 +13,7 @@ interface Message {
 const Chatbox = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showHighlight, setShowHighlight] = useState(true);
+  const [showTooltip, setShowTooltip] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
@@ -62,10 +63,26 @@ const Chatbox = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const handleChatToggle = () => {
+    setIsOpen(!isOpen);
+    setShowHighlight(false);
+    setShowTooltip(false);
+  };
+
   return (
     <div className="fixed bottom-0 right-0 z-[9999]">
+      {/* Persistent Tooltip */}
+      {showTooltip && !isOpen && (
+        <div className="absolute bottom-20 right-2 mb-4 animate-fade-in">
+          <div className="bg-card border border-border text-foreground p-3 rounded-lg shadow-lg max-w-48 text-sm">
+            💬 Chat with my AI assistant!
+            <div className="absolute bottom-0 right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-border transform translate-y-full"></div>
+          </div>
+        </div>
+      )}
+
       {/* Feature Highlight Popup */}
-      {showHighlight && !isOpen && (
+      {showHighlight && !isOpen && !showTooltip && (
         <div className="absolute bottom-20 right-0 mb-4 mr-4 animate-fade-in">
           <div className="bg-primary text-primary-foreground p-4 rounded-lg shadow-lg max-w-64 relative">
             <button 
@@ -87,11 +104,8 @@ const Chatbox = () => {
 
       {/* Chat Toggle Button */}
       <button
-        onClick={() => {
-          setIsOpen(!isOpen);
-          setShowHighlight(false);
-        }}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-primary hover:bg-primary/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center animate-pulse hover:animate-none group"
+        onClick={handleChatToggle}
+        className="fixed bottom-6 right-6 w-16 h-16 bg-primary hover:bg-primary/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
         aria-label="Open AI chat"
       >
         {isOpen ? (
@@ -99,7 +113,7 @@ const Chatbox = () => {
         ) : (
           <div className="relative">
             <MessageCircle className="h-7 w-7 text-primary-foreground" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
         )}
       </button>

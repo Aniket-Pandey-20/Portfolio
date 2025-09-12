@@ -44,7 +44,7 @@ const Index = () => {
       {/* Dark/Light Mode Toggle */}
       <button
         onClick={toggleDarkMode}
-        className="fixed top-6 right-6 z-50 p-3 rounded-full bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+        className="fixed top-16 right-6 z-50 p-3 rounded-full bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
         aria-label="Toggle dark mode"
       >
         {darkMode ? (

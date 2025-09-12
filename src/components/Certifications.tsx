@@ -1,52 +1,56 @@
-import { Award, ExternalLink } from "lucide-react";
+import { Award, ExternalLink, Shield, Code } from "lucide-react";
 
 const Certifications = () => {
   const certifications = [
     {
       name: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
-      credentialUrl: "https://www.credly.com/badges/d8793a30-d478-4821-837b-21861c2ef8d4"
+      credentialUrl: "https://www.credly.com/badges/d8793a30-d478-4821-837b-21861c2ef8d4",
+      icon: Shield,
+      color: "from-orange-500/20 to-yellow-500/20"
     },
     {
       name: "Problem Solving (Intermediate)",
       issuer: "HackerRank",
-      credentialUrl: "https://www.hackerrank.com/certificates/06c12c2f17bd"
+      credentialUrl: "https://www.hackerrank.com/certificates/06c12c2f17bd",
+      icon: Code,
+      color: "from-green-500/20 to-emerald-500/20"
     }
   ];
 
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Certifications</h2>
-          <div className="w-16 h-0.5 bg-primary mx-auto"></div>
+    <section id="certifications" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary/5 to-transparent">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-3">Certifications</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {certifications.map((cert) => (
-            <div key={cert.name} className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-4 flex-1">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Award className="h-5 w-5 text-primary" />
+        <div className="grid gap-4">
+          {certifications.map((cert, index) => (
+            <div 
+              key={cert.name} 
+              className="group relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className={`bg-gradient-to-br ${cert.color} p-3 rounded-xl group-hover:scale-110 transition-transform duration-300`}>
+                    <cert.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-1">
+                  <div>
+                    <h3 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                       {cert.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      {cert.issuer}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                   </div>
                 </div>
                 <a
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-primary hover:text-primary/80 transition-colors duration-200 text-sm font-medium"
+                  className="flex items-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2 rounded-lg transition-all duration-300 text-sm font-medium group-hover:scale-105"
                 >
-                  View
-                  <ExternalLink className="h-3 w-3" />
+                  View <ExternalLink className="h-3 w-3" />
                 </a>
               </div>
             </div>
