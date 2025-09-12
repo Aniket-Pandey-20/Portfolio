@@ -12,6 +12,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 import IntroScreen from "../components/IntroScreen";
+import Chatbox from "../components/Chatbox";
 
 const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -70,6 +71,9 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* Chatbox */}
+      <Chatbox />
     </div>
   );
 };
