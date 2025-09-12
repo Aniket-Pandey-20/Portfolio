@@ -19,7 +19,7 @@ const EducationCertifications = () => {
   ];
 
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-foreground mb-4">Education & Certifications</h2>

@@ -73,10 +73,10 @@ const Chatbox = () => {
     <div className="fixed bottom-0 right-0 z-[9999]">
       {/* Persistent Tooltip */}
       {showTooltip && !isOpen && (
-        <div className="absolute bottom-20 right-2 mb-4 animate-fade-in">
-          <div className="bg-card border border-border text-foreground p-3 rounded-lg shadow-lg max-w-48 text-sm">
+        <div className="absolute bottom-8 right-20 animate-fade-in">
+          <div className="bg-card border border-border text-foreground p-3 rounded-lg shadow-lg max-w-52 text-sm relative">
             💬 Chat with my AI assistant!
-            <div className="absolute bottom-0 right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-border transform translate-y-full"></div>
+            <div className="absolute top-1/2 right-0 w-0 h-0 border-t-4 border-b-4 border-l-4 border-t-transparent border-b-transparent border-l-border transform translate-x-full -translate-y-1/2"></div>
           </div>
         </div>
       )}
@@ -105,45 +105,47 @@ const Chatbox = () => {
       {/* Chat Toggle Button */}
       <button
         onClick={handleChatToggle}
-        className="fixed bottom-6 right-6 w-16 h-16 bg-primary hover:bg-primary/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 w-20 h-20 bg-gradient-to-br from-primary to-primary/80 hover:from-primary/90 hover:to-primary Shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center group rounded-full border-4 border-white/20"
         aria-label="Open AI chat"
       >
         {isOpen ? (
-          <X className="h-6 w-6 text-primary-foreground" />
+          <X className="h-8 w-8 text-primary-foreground" />
         ) : (
           <div className="relative">
-            <MessageCircle className="h-7 w-7 text-primary-foreground" />
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"></div>
+            <MessageCircle className="h-8 w-8 text-primary-foreground group-hover:scale-110 transition-transform duration-300" />
+            <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
           </div>
         )}
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-card border border-border rounded-xl shadow-2xl animate-scale-in">
+        <div className="fixed bottom-28 right-6 w-80 h-96 bg-card border border-border rounded-xl shadow-2xl animate-scale-in">
           {/* Chat Header */}
           <div className="p-4 border-b border-border bg-primary/5 rounded-t-xl">
-            <div className="flex items-center gap-2">
-              <Bot className="h-5 w-5 text-primary" />
-              <div>
-                <h3 className="font-semibold text-foreground">Aniket's AI Assistant</h3>
-                <p className="text-xs text-muted-foreground flex items-center gap-1">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  Online
-                </p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Bot className="h-5 w-5 text-primary" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Aniket's AI Assistant</h3>
+                  <p className="text-xs text-muted-foreground flex items-center gap-1">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    Online
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Chat Messages */}
-          <div className="p-4 h-64 overflow-y-auto space-y-3 scroll-smooth">
+          <div className="p-4 h-60 overflow-y-auto space-y-3 scroll-smooth">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.isUser ? "justify-end" : "justify-start"} animate-fade-in`}
               >
                 <div
-                  className={`max-w-[85%] p-3 rounded-lg ${
+                  className={`max-w-[85%] p-3 rounded-lg break-words ${
                     message.isUser
                       ? "bg-primary text-primary-foreground rounded-br-none"
                       : "bg-muted text-foreground rounded-bl-none border"
@@ -157,18 +159,18 @@ const Chatbox = () => {
 
           {/* Chat Input */}
           <div className="p-4 border-t border-border bg-muted/20 rounded-b-xl">
-            <div className="flex gap-2">
+            <div className="flex items-center gap-3">
               <Input
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask me anything about Aniket..."
-                className="flex-1 border-primary/20 focus:border-primary"
+                className="flex-1 border-primary/20 focus:border-primary h-10"
               />
               <Button 
                 onClick={handleSendMessage} 
                 size="icon"
-                className="bg-primary hover:bg-primary/90"
+                className="bg-primary hover:bg-primary/90 h-10 w-10 shrink-0"
                 disabled={!inputText.trim()}
               >
                 <Send className="h-4 w-4" />
