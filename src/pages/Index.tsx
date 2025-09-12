@@ -69,9 +69,6 @@ const Index = () => {
         <Contact />
       </main>
 
-      {/* Footer */}
-      <Footer />
-
       {/* Chatbox */}
       <Chatbox />
     </div>
