@@ -22,9 +22,7 @@ const Hero = () => {
 
   const typingTexts = [
     "Aniket Pandey",
-    "Software Developer", 
-    "Problem Solver",
-    "Innovation Driver"
+    "Software Developer"
   ];
 
   return (
