@@ -62,29 +62,31 @@ export default function About() {
                   m.from === "bot" ? "justify-start" : "justify-end"
                 }`}
               >
-                {/* Avatar */}
                 {m.from === "bot" ? (
-                  <img
-                    src="/my-photo.jpg"
-                    alt="Aniket"
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
+                  <>
+                    {/* Bot Avatar - Left */}
+                    <img
+                      src="/my-photo.jpg"
+                      alt="Aniket"
+                      className="w-8 h-8 rounded-full object-cover"
+                    />
+                    {/* Bot Message */}
+                    <div className="max-w-[75%] p-3 rounded-2xl text-sm bg-muted text-foreground rounded-bl-none">
+                      {m.text}
+                    </div>
+                  </>
                 ) : (
-                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                    <User className="h-4 w-4 text-foreground/60" />
-                  </div>
+                  <>
+                    {/* User Message */}
+                    <div className="max-w-[75%] p-3 rounded-2xl text-sm bg-primary text-primary-foreground rounded-br-none">
+                      {m.text}
+                    </div>
+                    {/* User Avatar - Right */}
+                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                      <User className="h-4 w-4 text-foreground/60" />
+                    </div>
+                  </>
                 )}
-
-                {/* Bubble */}
-                <div
-                  className={`max-w-[75%] p-3 rounded-2xl text-sm ${
-                    m.from === "bot"
-                      ? "bg-muted text-foreground rounded-bl-none"
-                      : "bg-primary text-primary-foreground rounded-br-none"
-                  }`}
-                >
-                  {m.text}
-                </div>
               </div>
             ))}
             
