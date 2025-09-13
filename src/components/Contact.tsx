@@ -26,13 +26,13 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-t from-primary/5 via-transparent to-transparent">
-      <div className="max-w-2xl mx-auto text-center">
+      <div className="mx-auto text-center">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-3">Let's Connect</h2>
           <p className="text-muted-foreground">Ready to collaborate? Let's create something amazing together.</p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 max-w-4xl mx-auto">
+        <div className="px-20 flex flex-wrap items-center justify-between gap-8 bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 max-w-4xl mx-auto">
           {socialLinks.map((link, index) => (
             <a
               key={link.name}
@@ -48,7 +48,7 @@ const Contact = () => {
               <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                 {link.name}
               </span>
-              <span className="text-xs text-muted-foreground/70 group-hover:text-muted-foreground transition-colors duration-300 max-w-[150px] text-center break-all">
+              <span className="text-xs text-muted-foreground/70 group-hover:text-muted-foreground transition-colors duration-300 max-w-[250px] text-center break-all">
                 {link.label}
               </span>
             </a>

@@ -1,12 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Bot, Sparkles, Send, User } from "lucide-react";
 import { Client } from "@gradio/client";
-import { Skeleton } from "@/components/ui/skeleton";
 
 export default function About() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  
+const scrollToBottom = () => {
+  const el = messagesEndRef.current;
+  if (el) {
+    el.scrollTop = el.scrollHeight;
+  }
+};
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isLoading]);
 
   const sendMessage = async () => {
     if (!input.trim() || isLoading) return;
@@ -49,12 +61,12 @@ export default function About() {
         <div className="bg-card border border-border rounded-xl shadow-lg p-6 mx-auto flex flex-col max-h-[60vh]">
           <div className="flex items-center gap-2 mb-4">
             <Bot className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-foreground">AI Assistant</span>
+            <span className="font-semibold text-foreground">AI Avatar</span>
             <Sparkles className="h-4 w-4 text-primary animate-pulse" />
           </div>
 
           {/* Scrollable message list */}
-          <div className="space-y-4 flex-1 overflow-y-auto pr-2">
+          <div className="space-y-4 flex-1 overflow-y-auto pr-2" ref={messagesEndRef}>
             {messages.map((m, i) => (
               <div
                 key={i}
@@ -104,7 +116,7 @@ export default function About() {
                     <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{animationDelay: '0.1s'}}></div>
                     <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
                   </div>
-                  <span className="text-xs text-muted-foreground ml-2">Thinking...</span>
+                  {/* <span className="text-xs text-muted-foreground ml-2">...</span> Thinking Text*/}
                 </div>
               </div>
             )}
@@ -115,7 +127,7 @@ export default function About() {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type a message..."
+              placeholder="Curious about my professional journey? Go ahead and ask!"
               className="flex-1 border border-border rounded-full px-4 py-2 text-sm bg-background text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isLoading}
               onKeyDown={(e) => {
