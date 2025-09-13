@@ -32,7 +32,7 @@ const Contact = () => {
           <p className="text-muted-foreground">Ready to collaborate? Let's create something amazing together.</p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8 bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-8 bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 max-w-6xl mx-auto">
           {socialLinks.map((link, index) => (
             <a
               key={link.name}
