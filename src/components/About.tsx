@@ -120,6 +120,7 @@ const scrollToBottom = () => {
                 </div>
               </div>
             )}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Input bar */}
