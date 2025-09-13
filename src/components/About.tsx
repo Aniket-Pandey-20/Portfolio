@@ -1,22 +1,37 @@
 import { useState } from "react";
 import { Bot, Sparkles, Send, User } from "lucide-react";
 import { Client } from "@gradio/client";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function About() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendMessage = async () => {
-    if (!input.trim()) return;
-    setMessages(prev => [...prev, { from: "user", text: input }]);
+    if (!input.trim() || isLoading) return;
+    
+    const userMessage = { from: "user", text: input };
+    setMessages(prev => [...prev, userMessage]);
     setInput("");
+    setIsLoading(true);
 
-    const client = await Client.connect("http://127.0.0.1:7862/");
-    const result = await client.predict("/chat", { 		
-		  message: input
-    });
-    console.log(result)
-    setMessages(prev => [...prev, { from: "bot", text: result.data[0] }]);
+    try {
+      const client = await Client.connect("http://127.0.0.1:7862/");
+      const result = await client.predict("/chat", { 		
+        message: input
+      });
+      console.log(result);
+      setMessages(prev => [...prev, { from: "bot", text: result.data[0] }]);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setMessages(prev => [...prev, { 
+        from: "bot", 
+        text: "Sorry, I'm having trouble connecting right now. Please try again later." 
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,6 +87,25 @@ export default function About() {
                 </div>
               </div>
             ))}
+            
+            {/* Loading indicator */}
+            {isLoading && (
+              <div className="flex items-center gap-2 justify-start animate-fade-in">
+                <img
+                  src="/my-photo.jpg"
+                  alt="Aniket"
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div className="bg-muted text-foreground rounded-2xl rounded-bl-none p-3 flex items-center gap-1">
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  </div>
+                  <span className="text-xs text-muted-foreground ml-2">Thinking...</span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Input bar */}
@@ -80,7 +114,8 @@ export default function About() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type a message..."
-              className="flex-1 border border-border rounded-full px-4 py-2 text-sm bg-background text-foreground"
+              className="flex-1 border border-border rounded-full px-4 py-2 text-sm bg-background text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isLoading}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   sendMessage();
@@ -90,7 +125,8 @@ export default function About() {
             <button
               onClick={sendMessage}
               title="Send"
-              className="bg-primary text-primary-foreground p-3 rounded-full hover:opacity-90"
+              disabled={isLoading || !input.trim()}
+              className="bg-primary text-primary-foreground p-3 rounded-full hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send className="h-4 w-4" />
             </button>
