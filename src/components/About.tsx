@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Bot, Sparkles, Send, User } from "lucide-react";
 import { Client } from "@gradio/client";
+import ReactMarkdown from "react-markdown";
 
 export default function About() {
   const [messages, setMessages] = useState([]);
@@ -33,13 +34,12 @@ const scrollToBottom = () => {
       const result = await client.predict("/chat", { 		
         message: input
       });
-      console.log(result);
       setMessages(prev => [...prev, { from: "bot", text: result.data[0] }]);
     } catch (error) {
       console.error("Error sending message:", error);
       setMessages(prev => [...prev, { 
         from: "bot", 
-        text: "Sorry, I'm having trouble connecting right now. Please try again later." 
+        text: "Apologies, something went wrong. Try refreshing the page, or feel free to contact me through email or LinkedIn." 
       }]);
     } finally {
       setIsLoading(false);
@@ -70,7 +70,7 @@ const scrollToBottom = () => {
             {messages.map((m, i) => (
               <div
                 key={i}
-                className={`flex items-center gap-2 ${
+                className={`flex items-start gap-2 ${
                   m.from === "bot" ? "justify-start" : "justify-end"
                 }`}
               >
@@ -83,8 +83,10 @@ const scrollToBottom = () => {
                       className="w-8 h-8 rounded-full object-cover"
                     />
                     {/* Bot Message */}
-                    <div className="max-w-[75%] p-3 rounded-2xl text-sm bg-muted text-foreground rounded-bl-none">
-                      {m.text}
+                    <div className="max-w-[75%] p-3 rounded-2xl prose text-sm bg-muted text-foreground rounded-bl-none">
+                      <ReactMarkdown>
+                        {m.text}
+                      </ReactMarkdown>
                     </div>
                   </>
                 ) : (
