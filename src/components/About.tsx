@@ -29,7 +29,7 @@ const scrollToBottom = () => {
     setIsLoading(true);
 
     try {
-      const client = await Client.connect("http://127.0.0.1:7862/");
+      const client = await Client.connect(import.meta.env.VITE_AI_TWIN_URL);
       const result = await client.predict("/chat", { 		
         message: input
       });
