@@ -32,19 +32,25 @@ const Contact = () => {
           <p className="text-muted-foreground">Ready to collaborate? Let's create something amazing together.</p>
         </div>
 
-        <div className="inline-flex items-center gap-6 bg-card/50 backdrop-blur-sm border border-border/30 rounded-full p-6 shadow-lg hover:shadow-xl transition-all duration-500">
+        <div className="flex flex-wrap items-center justify-center gap-8 bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 max-w-4xl mx-auto">
           {socialLinks.map((link, index) => (
             <a
               key={link.name}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative"
+              className="group relative flex flex-col items-center gap-3"
               title={link.label}
             >
-              <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                <link.icon className="h-5 w-5 text-primary" />
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full flex items-center justify-center group-hover:from-primary/20 group-hover:to-primary/30 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                <link.icon className="h-6 w-6 text-primary" />
               </div>
+              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                {link.name}
+              </span>
+              <span className="text-xs text-muted-foreground/70 group-hover:text-muted-foreground transition-colors duration-300 max-w-[150px] text-center break-all">
+                {link.label}
+              </span>
             </a>
           ))}
         </div>

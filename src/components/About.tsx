@@ -27,6 +27,10 @@ export default function About() {
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
 
+        <div className="text-center mb-6">
+          <p className="text-lg text-muted-foreground">Talk to my AI twin to know more about me</p>
+        </div>
+
         <div className="bg-card border border-border rounded-xl shadow-lg p-6 mx-auto flex flex-col max-h-[60vh]">
           <div className="flex items-center gap-2 mb-4">
             <Bot className="h-5 w-5 text-primary" />
